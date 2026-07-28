@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeMate | Your Coding Apprentice</title>
+
+    <link rel="stylesheet" href="codeMatestyle.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     1. WELCOME PAGE
+===================================================== -->
+<section id="welcomePage" class="page welcome-page">
+
+    <header class="top-header">
+        <div class="logo">
+            &lt;/&gt; <span>CodeMate</span>
+        </div>
+    </header>
+
+    <div class="welcome-content">
+
+        <div class="welcome-text">
+            <p class="small-title">YOUR CODING APPRENTICE</p>
+
+            <h1>
+                From Basics to.<br>
+                <span>Better Code.</span>
+            </h1>
+
+            <p>
+                CodeMate helps beginners learn programming
+                through simple guides, quizzes, and activities.
+            </p>
+
+            <button id="startButton" class="primary-button">
+                Get Started
+            </button>
+        </div>
+
+        <div class="welcome-visual">
+            <div class="code-icon">&lt;/&gt;</div>
+
+            <div class="computer-box">
+                <span>print("Hello")</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. LOGIN PAGE
+===================================================== -->
+<section id="loginPage" class="page login-page hidden">
+
+    <div class="login-container">
+
+        <div class="login-side">
+
+            <div class="logo">
+                &lt;/&gt; CodeMate
+            </div>
+
+            <div class="login-icon">
+                &lt;/&gt;
+            </div>
+
+            <h2>Welcome Back!</h2>
+
+            <p>
+                Login to continue your learning journey.
+            </p>
+
+        </div>
+
+
+        <div class="login-box">
+
+            <h1>Login</h1>
+
+            <p class="login-subtitle">
+                Enter your account to continue
+            </p>
+
+            <form id="loginForm">
+
+                <label for="username">
+                    Username
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter your username"
+                    required
+                >
+
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+
+                <label class="remember">
+
+                    <input type="checkbox">
+
+                    Remember me
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Login
+                </button>
+
+            </form>
+
+
+            <p class="signup-text">
+                Don't have an account?
+                <span>Sign up</span>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. MAIN DASHBOARD
+===================================================== -->
+<section id="dashboardPage" class="page dashboard-page hidden">
+
+
+    <!-- ==================== SIDEBAR ==================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div>&lt;/&gt;</div>
+
+            <span>CodeMate</span>
+
+        </div>
+
+
+        <nav>
+
+            <button
+                class="nav-button active"
+                data-page="homePage"
+            >
+                🏠 <span>Home</span>
+            </button>
+
+
+            <button
+                class="nav-button"
+                data-page="languagesPage"
+            >
+                💻 <span>Languages</span>
+            </button>
+
+
+            <!-- Hidden until a language is selected -->
+
+            <button
+                class="nav-button language-nav hidden"
+                data-page="guidePage"
+            >
+                📖 <span>Guide</span>
+            </button>
+
+
+            <button
+                class="nav-button language-nav hidden"
+                data-page="quizPage"
+            >
+                ❓ <span>Quiz</span>
+            </button>
+
+
+            <button
+                class="nav-button language-nav hidden"
+                data-page="activityPage"
+            >
+                ⚙️ <span>Activity</span>
+            </button>
+
+
+            <button
+                id="logoutButton"
+                class="logout-button"
+            >
+                🚪 <span>Log Out</span>
+            </button>
+
+        </nav>
+
+    </aside>
+
+
+    <!-- ==================== MAIN CONTENT ==================== -->
+
+    <main class="main-content">
+
+
+        <!-- =================================================
+             HOME PAGE
+        ================================================= -->
+
+        <section
+            id="homePage"
+            class="content-page"
+        >
+
+            <p class="page-label">
+                YOUR LEARNING SPACE
+            </p>
+
+
+            <h1>
+                Welcome to CodeMate!
+            </h1>
+
+
+            
+
+
+            <!-- ==================== LANGUAGE CARDS ==================== -->
+
+            <div class="language-cards">
+
+
+                <!-- PYTHON -->
+
+                <button
+                    class="language-card"
+                    onclick="selectLanguage('python')"
+                >
+
+                    <div class="language-logo">
+
+                        <img
+                            src="https://tse4.mm.bing.net/th/id/OIP.fyuuf1u74xNdYAzdTFI9LwHaHa?r=0&pid=Api&h=220&P=0"
+                            alt="Python Logo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Python
+                    </h3>
+
+
+                    <p>
+                        Simple and beginner-friendly
+                        programming language.
+                    </p>
+
+
+                    <span class="card-button">
+                        Start Learning
+                    </span>
+
+                </button>
+
+
+
+                <!-- JAVA -->
+
+                <button
+                    class="language-card"
+                    onclick="selectLanguage('java')"
+                >
+
+                    <div class="language-logo">
+
+                        <img
+                            src="https://s.yimg.com/fz/api/res/1.2/ok5efvvL1FLjTEjWS68KdA--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/8d/0c/72/8d0c72f49aaa0a6a35d34c7b98035baa.jpg"
+                            alt="Java Logo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Java
+                    </h3>
+
+
+                    <p>
+                        Powerful object-oriented
+                        programming language.
+                    </p>
+
+
+                    <span class="card-button">
+                        Start Learning
+                    </span>
+
+                </button>
+
+
+
+                <!-- C LANGUAGE -->
+
+                <button
+                    class="language-card"
+                    onclick="selectLanguage('c')"
+                >
+
+                    <div class="language-logo">
+
+                        <img
+                            src="https://th.bing.com/th/id/OIP.ggb-3B-8LRfbgS0lPLYNxwHaIU?w=144&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                            alt="C Language Logo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        C Language
+                    </h3>
+
+
+                    <p>
+                        A foundational language
+                        for programming.
+                    </p>
+
+
+                    <span class="card-button">
+                        Start Learning
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- ==================== SELECT MESSAGE ==================== -->
+
+        
+
+            <!-- ==================== HOME FOOTER ==================== -->
+
+            <footer class="home-footer">
+
+                <div class="footer-logo">
+                    &lt;/&gt; CodeMate
+                </div>
+
+
+                <p>
+                    Your Coding Apprentice
+                </p>
+
+
+                <div class="footer-credit">
+                    © 2026 CodeMate |
+                    Your Coding Apprentice |
+                    Made by ICT 3 Group 1
+                </div>
+
+            </footer>
+
+        </section>
+
+
+
+        <!-- =================================================
+             LANGUAGES PAGE
+        ================================================= -->
+
+        <section
+            id="languagesPage"
+            class="content-page hidden"
+        >
+
+            <p class="page-label">
+                LANGUAGES
+            </p>
+
+
+            <h1>
+                Choose a Programming Language
+            </h1>
+
+
+            <p class="page-description">
+                Select a language to start your learning journey.
+            </p>
+
+
+            <div class="language-cards">
+
+
+                <!-- PYTHON -->
+
+                <button
+                    class="language-card"
+                    onclick="selectLanguage('python')"
+                >
+
+                    <div class="language-logo">
+
+                        <img
+                            src="https://tse4.mm.bing.net/th/id/OIP.fyuuf1u74xNdYAzdTFI9LwHaHa?r=0&pid=Api&h=220&P=0"
+                            alt="Python Logo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Python
+                    </h3>
+
+
+                    <p>
+                        Simple and easy to learn.
+                    </p>
+
+
+                    <span class="card-button">
+                        Start Learning
+                    </span>
+
+                </button>
+
+
+
+                <!-- JAVA -->
+
+                <button
+                    class="language-card"
+                    onclick="selectLanguage('java')"
+                >
+
+                    <div class="language-logo">
+
+                        <img
+                            src="https://s.yimg.com/fz/api/res/1.2/ok5efvvL1FLjTEjWS68KdA--~C/YXBwaWQ9c3JjaGRkO2ZpPWZpbGw7aD00MTI7cHhvZmY9NTA7cHlvZmY9MTAwO3E9ODA7c3M9MTt3PTM4OA--/https://i.pinimg.com/736x/8d/0c/72/8d0c72f49aaa0a6a35d34c7b98035baa.jpg"
+                            alt="Java Logo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        Java
+                    </h3>
+
+
+                    <p>
+                        Object-oriented and widely used.
+                    </p>
+
+
+                    <span class="card-button">
+                        Start Learning
+                    </span>
+
+                </button>
+
+
+
+                <!-- C -->
+
+                <button
+                    class="language-card"
+                    onclick="selectLanguage('c')"
+                >
+
+                    <div class="language-logo">
+
+                        <img
+                            src="https://th.bing.com/th/id/OIP.ggb-3B-8LRfbgS0lPLYNxwHaIU?w=144&h=180&c=7&r=0&o=7&pid=1.7&rm=3"
+                            alt="C Language Logo"
+                        >
+
+                    </div>
+
+
+                    <h3>
+                        C Language
+                    </h3>
+
+
+                    <p>
+                        Fast and powerful.
+                    </p>
+
+
+                    <span class="card-button">
+                        Start Learning
+                    </span>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GUIDE PAGE
+        ================================================= -->
+
+        <section
+            id="guidePage"
+            class="content-page hidden"
+        >
+
+            <div class="lesson-header">
+
+                <button
+                    class="back-button"
+                    onclick="showPage('homePage')"
+                >
+                    ← Back to Dashboard
+                </button>
+
+
+                <h1 id="guideTitle">
+                    Python Guide 🐍
+                </h1>
+
+
+                <p id="guideLessonNumber">
+                    Lesson 1 of 4
+                </p>
+
+            </div>
+
+
+            <!-- GUIDE IMAGE -->
+
+            <div class="guide-image-container">
+
+                <button
+                    class="slide-button previous"
+                    onclick="previousGuide()"
+                >
+                    ←
+                </button>
+
+
+                <img
+                    id="guideImage"
+                    src=""
+                    alt="Programming Guide"
+                >
+
+
+                <button
+                    class="slide-button next"
+                    onclick="nextGuide()"
+                >
+                    →
+                </button>
+
+            </div>
+
+
+            <div class="guide-controls">
+
+                <span id="guideCounter">
+                    1 / 4
+                </span>
+
+
+                <button
+                    class="primary-button"
+                    onclick="nextGuide()"
+                >
+                    Next Lesson →
+                </button>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             QUIZ PAGE
+        ================================================= -->
+
+        <section
+            id="quizPage"
+            class="content-page hidden"
+        >
+
+            <div class="quiz-layout">
+
+
+                <div class="quiz-progress">
+
+                    <h3>
+                        Quiz Progress
+                    </h3>
+
+
+                    <p id="quizQuestionNumber">
+                        Question 1 of 5
+                    </p>
+
+
+                    <div class="progress-bar">
+
+                        <div
+                            class="progress"
+                            id="quizProgress"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="quiz-content">
+
+                    <h1 id="quizTitle">
+                        Python Quiz 🐍
+                    </h1>
+
+
+                    <p id="quizQuestion">
+                        Which of the following is used
+                        to define a variable in Python?
+                    </p>
+
+
+                    <div
+                        class="quiz-options"
+                        id="quizOptions"
+                    >
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="answer"
+                                value="a"
+                            >
+
+                            <span id="optionA">
+                                var x = 5
+                            </span>
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="answer"
+                                value="b"
+                            >
+
+                            <span id="optionB">
+                                x := 5
+                            </span>
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="answer"
+                                value="c"
+                            >
+
+                            <span id="optionC">
+                                x = 5
+                            </span>
+
+                        </label>
+
+
+                        <label>
+
+                            <input
+                                type="radio"
+                                name="answer"
+                                value="d"
+                            >
+
+                            <span id="optionD">
+                                int x = 5
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        class="primary-button"
+                        id="nextQuizButton"
+                    >
+                        Next →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ACTIVITY PAGE
+        ================================================= -->
+
+        <section
+            id="activityPage"
+            class="content-page hidden"
+        >
+
+            <h1 id="activityTitle">
+                Python Activity 🐍
+            </h1>
+
+
+            <p id="activityNumber">
+                Activity 1 of 3
+            </p>
+
+
+            <div class="activity-box">
+
+                <h3>
+                    Practice Activity
+                </h3>
+
+
+                <p id="activityQuestion">
+                    Write a Python program that prints
+                    "Hello, CodeMate!"
+                </p>
+
+
+                <textarea
+                    id="codeInput"
+                    placeholder="Write your code here..."
+                ></textarea>
+
+
+                <div class="sample-output">
+
+                    <h4>
+                        Sample Output
+                    </h4>
+
+
+                    <pre id="output">Hello, CodeMate!</pre>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    id="runCodeButton"
+                >
+                    Run Code
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</section>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script src="codeMate.js"></script>
+
+</body>
+</html>
